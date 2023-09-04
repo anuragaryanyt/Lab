@@ -1,0 +1,11 @@
+// if (inputFile == NULL) {
+    //     printf("Error opening the input file!\n");
+    //     return 1;
+    // }
+
+
+// if (outputFile == NULL) {
+    //     printf("Error opening the output file!\n");
+    //     fclose(inputFile);
+    //     return 1;
+    // }
