@@ -69,8 +69,7 @@ int main()
     }
 
     bubbleSort(a, size);
-
-    rearrangeArrays(p,w, a, size);
+    rearrangeArrays(p, w, a, size);
     
     // Print the arranged arrays
     printf("Arranged Arrays:\n");
@@ -79,24 +78,25 @@ int main()
                i, p[i], i, w[i], i, a[i]);
     }
 
-   
 
-    // for (i = 0; i < size; i++)
-    // {
-    //     if (w[i] <= x)
-    //     {
-    //         y = y + p[i];
-    //         printf("y= %d\n", y);
-    //         x = x - w[i];
-    //         printf("x= %d\n", x);
-    //     }
-    //     else
-    //         break;
-    // }
-    // if( i<size && y!=0)
-    // {
-    //     y=y+(x/w[i])*p[i];
-    // }
+
+    for (i = 0; i < size; i++)
+    {
+        if (w[i] <= x)
+        {
+            y = y + p[i];
+            printf("y= %d\n", y);
+            x = x - w[i];
+            printf("x= %d\n", x);
+        }
+        else
+            break;
+    }
+    if( i<size && y!=0)
+    {
+        y=y+(x/w[i])*p[i];
+    }
+
 
     return 0;
 }
