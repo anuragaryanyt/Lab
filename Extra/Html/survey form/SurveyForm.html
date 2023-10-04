@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form </title>
+    <!-- <style>
+        .button {
+            background-color: rgb(176, 235, 12);
+            color: black;
+            /* border-color:red; */
+            border-radius: 5px;
+            border: 0px
+        }
+    </style> -->
+    <link rel="stylesheet" href="survey.css">
+</head>
+
+<body bgcolor="#87CEEB">
+
+    <h2 align="center">
+        <b><em>Survey Form</em></b>
+    </h2>
+    <hr size="2" color="black" width="100%">
+    <!-- <svg width="100%" height="1000">
+                <rect x="10%" y="10%" rx="10" ry="10" width="80%" height="80%" style="fill:rgb(255, 255, 255)" />
+                <text x="20%" y="15%" fill="black" font-size="13">
+                    Let us know how can we improve our pages
+                    
+                    </text>
+            </svg> -->
+    <center>
+        
+
+        Let us know how can we improve our website
+        <form action="survey.php">
+            <div>
+                Name: <input type="text" name="myName">
+            </div><br>
+            <div>Email: <input type="email" name="myMail">
+            </div><br>
+            <div>
+                Age: <input type="number" name="myAge">
+            </div><br>
+            <div>
+                <label for="role">which option best describe your current role:</label>
+                <select name="myRole" id="role">
+                    <option value="1" selected>Student</option>
+                    <option value="2">Full time job</option>
+                    <option value="3">Part time job</option>
+                    <option value="4">Prefer not to say</option>
+
+                </select>
+            </div><br>
+            <div>
+                How likely you rate this web page: 5<input type="radio" name="rate" checked><br>4<input type="radio"
+                    name="rate"><br>3<input type="radio" name="rate"><br>2<input type="radio" name="rate"><br>1<input
+                    type="radio" name="rate">
+            </div><br>
+            <div>
+                <label for="like">What do you like most: </label>
+                <select name="mostLiked" id="like">
+                    <option value="1">Challenges</option>
+                    <option value="2">Projects</option>
+                    <option value="3">Community</option>
+                    <option value="4">Open Source</option>
+                </select>
+            </div><br>
+            <div>
+                Things that should be improved in future: <input type="checkbox" name="improve">Front end projects
+                <br>
+                <input type="checkbox" name="improve">Back end projects <br>
+                <input type="checkbox" name="improve">Videos<br>
+                <input type="checkbox" name="improve">Wiki<br>
+                <input type="checkbox" name="improve">Forum<br>
+
+            </div><br>
+            <div>
+                Any suggestion: <br><textarea name="suggestion" cols="20" rows="3"></textarea>
+            </div><br>
+            <br>
+
+            <input type="submit" value="Submit Now" class="button">
+            <!-- <input type="reset" value="Reset"> -->
+            <input type="reset" value="Reset" class="button"><br><br>
+            <hr size="2" width="100%" color="black">
+            <br>
+            <br>
+            <br>
+
+        </form>
+
+</body>
+
+</html>
