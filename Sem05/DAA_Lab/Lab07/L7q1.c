@@ -47,13 +47,15 @@ void prim(int n, int matrix[MAX_SIZE][MAX_SIZE], int start)
     int totalCost = 0;
     int parent[MAX_SIZE] = {0};
 
-    // set cost to infinity
+    // step1:
+    //  set cost to infinity
     int key[MAX_SIZE];
     for (int i = 0; i < n; ++i)
     {
         key[i] = INT_MAX;
     }
-
+    // step2:
+    //souce node=0
     key[start] = 0;
 
     for (int count = 0; count < n - 1; ++count)
@@ -83,16 +85,16 @@ void prim(int n, int matrix[MAX_SIZE][MAX_SIZE], int start)
         }
     }
 
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = 0; j < n; ++j)
-        {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
+    // checking
+    //  for (int i = 0; i < n; ++i)
+    //  {
+    //      for (int j = 0; j < n; ++j)
+    //      {
+    //          printf("%d ", matrix[i][j]);
+    //      }
+    //      printf("\n");
+    //  }
 
-    // Display the cost adjacency matrix
     printf("Cost Adjacency Matrix of Minimum Spanning Tree:\n");
     for (int i = 0; i < n; ++i)
     {
