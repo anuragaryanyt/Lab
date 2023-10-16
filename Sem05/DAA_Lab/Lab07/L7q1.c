@@ -85,16 +85,6 @@ void prim(int n, int matrix[MAX_SIZE][MAX_SIZE], int start)
         }
     }
 
-    // checking
-    //  for (int i = 0; i < n; ++i)
-    //  {
-    //      for (int j = 0; j < n; ++j)
-    //      {
-    //          printf("%d ", matrix[i][j]);
-    //      }
-    //      printf("\n");
-    //  }
-
     printf("Cost Adjacency Matrix of Minimum Spanning Tree:\n");
     for (int i = 0; i < n; ++i)
     {
@@ -123,3 +113,4 @@ int main()
 
     return 0;
 }
+
