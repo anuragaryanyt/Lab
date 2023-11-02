@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, redirect, url_for
 from fpdf import FPDF
-import os
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -18,15 +18,27 @@ def generate_pdf():
 
     for image in images:
         pdf.add_page()
-        pdf.image(image, x=10, y=10, w=190, h=275)
 
-    # pdf.output("yourfile.pdf", "F")
+        # Get image dimensions using Pillow
+        img = Image.open(image)
+        img_width, img_height = img.size
+
+        # Set width and height in PDF
+        pdf.image(image, x=10, y=10, w=190, h=190 * img_height / img_width)
 
     pdf_output_path = "yourfile.pdf"
     pdf.output(pdf_output_path, "F")
 
-    return send_file(pdf_output_path, as_attachment=True)
+    # Redirect to a success page with the option to download
+    return redirect(url_for('success', filename='yourfile.pdf'))
+
+@app.route('/success/<filename>')
+def success(filename):
+    return render_template('success.html', filename=filename)
+
+@app.route('/download/<filename>')
+def download(filename):
+    return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
