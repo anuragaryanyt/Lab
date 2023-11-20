@@ -61,6 +61,6 @@ int main()
     {
         printf("Element %d not found with %d comparisons.\n", key_element, comparisons);
     }
-
+    
     return 0;
 }
