@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection Web App</title>
+</head>
+<body>
+    <h1>Face Detection Web App</h1>
+
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png, .gif" required>
+        <button type="submit">Upload and Detect Faces</button>
+    </form>
+
+    {% if original_image %}
+        <h2>Original Image</h2>
+        <img src="{{ original_image }}" alt="Original Image" style="max-width: 100%;">
+
+        {% if detected_faces %}
+            <h2>Detected Faces</h2>
+            <img src="{{ detected_faces }}" alt="Detected Faces" style="max-width: 100%;">
+        {% endif %}
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection Web App</title>
+</head>
+<body>
+    <h1>Face Detection Web App</h1>
+
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png, .gif" required>
+        <button type="submit">Upload and Detect Faces</button>
+    </form>
+
+    {% if original_image %}
+        <h2>Original Image</h2>
+        <img src="{{ url_for('static', filename=original_image) }}" alt="Original Image" style="max-width: 100%;">
+    {% endif %}
+
+    {% if detected_faces %}
+        <h2>Detected Faces</h2>
+        <img src="{{ url_for('static', filename='detected_faces.jpg') }}" alt="Detected Faces" style="max-width: 100%;">
+    {% endif %}
+</body>
+</html>
