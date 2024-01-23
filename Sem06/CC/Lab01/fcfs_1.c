@@ -59,18 +59,17 @@ void main()
     }
 
     turnsum = 0;
-    line(70);
+    line(50);
     printf("PID\tArrival\tBurst\tStart\tEnd\tWaiting\tTurnaround\n");
-    line(70);
+    line(50);
     for (int i = 0; i < num; i++)
     {
         printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\n", f[i].pid, f[i].arrival, f[i].burst, f[i].start, f[i].end, f[i].waiting, f[i].turnaround);
         turnsum += f[i].turnaround;
         waitsum += f[i].waiting;
     }
-    line(70);
+    line(50);
     turnavg = turnsum / (float)num;
-    printf("\nAverage Turnaround time: %.2f.", turnavg);
-    printf("\nAverage Waiting time: %.2f\n", waitsum / 5.0);
+    printf("\nAverage Turnaround time: %.3f.", turnavg);
+    printf("\nAverage Waiting time: %.3f.", waitsum / 5.0);
 }
-

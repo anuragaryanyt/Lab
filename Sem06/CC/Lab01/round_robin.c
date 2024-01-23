@@ -4,7 +4,7 @@
 struct process
 {
     char name;
-    int at, bt, wt, tt, rt; //rt=remaining time 
+    int at, bt, wt, tt, rt; // rt=remaining time
     int completed;
     float ntt;
 } p[10];
@@ -126,5 +126,3 @@ void main()
     }
     printf("\nAverage waiting time:%.2f\n", avgwt / n);
 }
-
-
