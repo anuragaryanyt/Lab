@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #progress-bar-container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 3px;
+            overflow: hidden;
+        }
+
+        #progress {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            /* Add smooth transition effect */
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        #status-message {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tracking Progress</h1>
+    <div id="progress-bar-container">
+        <div id="progress">0%</div>
+    </div>
+    <div id="status-message">Awaiting Update...</div>
+
+    <script>
+        function updateProgress(status) {
+            const progressBar = document.getElementById('progress');
+            const statusMessage = document.getElementById('status-message');
+            let progress = 0;
+            let statusText = "";
+
+            switch (status) {
+                case 'shipped':
+                    progress = 25;
+                    statusText = "Shipped";
+                    break;
+                case 'in transit':
+                    progress = 50;
+                    statusText = "In Transit";
+                    break;
+                case 'out for delivery':
+                    progress = 75;
+                    statusText = "Out for Delivery";
+                    break;
+                case 'delivered':
+                    progress = 100;
+                    statusText = "Delivered";
+                    break;
+                default:
+                    progress = 0;
+                    statusText = "Unknown Status";
+            }
+
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+            statusMessage.textContent = "Current Status: " + statusText;
+        }
+
+        function handleQRCodeScanning() {
+            fetch('/api/get_status')
+                .then(response => response.json())
+                .then(data => {
+                    const scannedStatus = data.status;
+                    updateProgress(scannedStatus);
+                })
+                .catch(error => {
+                    console.error('Error fetching status:', error);
+                });
+        }
+
+        handleQRCodeScanning();
+    </script>
+</body>
+
+</html>
