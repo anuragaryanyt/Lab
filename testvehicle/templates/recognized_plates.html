@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recognized Plates</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='car_background.jpg') }}");
+            /* background-image: url("car_background.jpg"); */
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: multiply;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        table{ color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Recognized Plates</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Plate Number</th>
+                <th>Owner Name</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for plate in recognized_plates %}
+            <tr>
+                <td>{{ plate.plate_number }}</td>
+                <td>{{ plate.owner_name }}</td>
+                <td>{{ plate.make }}</td>
+                <td>{{ plate.model }}</td>
+                <td>{{ plate.color }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

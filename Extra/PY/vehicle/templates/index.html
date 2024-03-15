@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Number Plate Detection</title>
+</head>
+<body>
+    <h1>Vehicle Number Plate Detection</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Detect</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var form = event.target;
+            var formData = new FormData(form);
+
+            fetch('/detect', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                if (data.error) {
+                    resultDiv.innerText = data.error;
+                } else {
+                    resultDiv.innerHTML = `
+                        <h2>Vehicle Details</h2>
+                        <p><strong>Owner:</strong> ${data.Owner}</p>
+                        <p><strong>Registration Date:</strong> ${data.RegistrationDate}</p>
+                        <!-- Add more fields as needed -->
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

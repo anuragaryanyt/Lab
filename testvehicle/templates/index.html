@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+    <title>License Plate Scanner</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='car_background.jpg') }}");
+            /* background-image: url("car_background.jpg"); */
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: multiply;
+        }
+
+
+        /* h1{background-color: #d0bdf4; */
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: white;
+            background-color: transparent;
+        }
+
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: dashed;
+        }
+
+        a:active {
+            color: yellowgreen;
+            background-color: transparent;
+        }
+
+        img {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>License Plate Scanner</h1>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+
+        <img src="{{ url_for('video_feed') }}" alt="License Plate Scanner">
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+    <div>
+        <a href="http://127.0.0.1:5000/recognized_plates" target="_blank">Click here to view recognized plates</a>
+
+    </div>
+</body>
+
+</html>
