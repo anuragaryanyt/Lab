@@ -20,5 +20,4 @@ public class vote {
 
         voting(age);
     }
-
 }
