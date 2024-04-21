@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+
+<body class="des">
+   
+
+    <h2>This is HTML form tutorial</h2>
+    <form action="backend.php">
+        <div>Name: <input type="text" name="myName"></div>
+        <br>
+        <div>Upload your img: <input type="file" name="myIMG"></div>
+        <br>
+        <div>Roll: <input type="number" name="myRoll"></div>
+        <br>
+        <div>DOB: <input type="date" name="myDate"></div>
+        <br>
+        <div>
+            <label for="sec">Sec</label>
+            <select name="mySec" id="sec">
+                <option value="1">OB1</option>
+                <option value="2">OB2</option>
+                <option value="3">OB3</option>
+                <option value="4">OB4</option>
+                <option value="5">OB5</option>
+            </select>
+        </div>
+        <br>
+        <div>Email: <input type="email" name="myEmail"></div>
+        <br>
+        <div>Marks in CS: <input type="number" name="CSmarks"></div>
+        <br>
+        <div>Marks in Maths: <input type="number" name="MATHSmarks"></div>
+        <br>
+        <div>Marks in Physics:<input type="number" name="PHYmarks"></div>
+        <br>
+        <div>Want hostel? : YES<input type="radio" name="myhostel"> NO <input type="radio" name="myhostel"></div>
+        <br>
+        <div>Write about Yourself<br><textarea name="mySELF" id="about" cols="30" rows="5"></textarea></div>
+        <br>
+        <hr>
+        <div>
+            <input type="submit" value="Submit Now">
+            <input type="reset" value="Reset Now">
+        </div>
+    </form>
+    <hr>
+    <a href="/html codes/topic.html">Topic</a><br>
+    <a href="/html codes/table.html">Table</a><br>
+    <a href="/html codes/draacWEB.html">web page</a><br>
+    <hr>
+    <form>
+        <input type="button" value="Back" onclick="history.back()">
+    </form>
+
+
+</body>
+
+</html>

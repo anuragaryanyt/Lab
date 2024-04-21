@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Generated Successfully</title>
+    <style>
+        .back-button {
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+
+            display: block;
+            margin-top: 20px;
+            margin-left: 45%;
+            margin-right: 45%;
+            text-align: center;
+            background-image: linear-gradient(to right, #007bff, #00c6ff);
+        }
+
+        .back-button:hover {
+            background-color: #023b78;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>PDF Generated Successfully</h1>
+    <p>Your PDF file has been successfully generated.</p>
+    <p>Download your file: <a href="{{ url_for('download', filename=filename) }}">Download PDF</a></p>
+
+    <br><br>
+    <div>
+        <a href="/" class="back-button">Back</a>
+    </div>
+</body>
+
+</html>
