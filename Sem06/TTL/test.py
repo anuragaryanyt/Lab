@@ -38,7 +38,3 @@ c1 = Car("Tesla", "Model 3", 2020, 4, "electric")
 c2 = Car("Hyundai", "i20", 2018, 5, "petrol")
 c1.show()
 c2.show()
-
-print("vcar")
-print("vcar")
-print
